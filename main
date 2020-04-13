@@ -6,7 +6,9 @@ from functools import partial
 from random import randint
 from prettytable import PrettyTable
 
-while True:
+
+def main():
+  while True:
     def cohren_teor(f1, f2, q=0.05):
         q1 = q / f1
         fisher_value = f.ppf(q=1 - q1, dfn=f2, dfd=(f1 - 1) * f2)
@@ -230,8 +232,10 @@ while True:
             break
         else:
             print("Рівняння регресії неадекватне.")
+            main()                                      ;якщо рівняння неадекватне - викликаємо функцію знову і починаємо з початку
             break
 
     else:
         print("Дисперсія неоднорідна. Спробуйте ще раз.")
         m += 1
+main()
